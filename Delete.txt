@@ -1,0 +1,19 @@
+local targets = {
+    "AntiGlitch.AntiZombie",
+    "AntiWeaponZone",
+    "HumanOnlyDoor"
+}
+
+for _, path in ipairs(targets) do
+    local object = workspace
+    for part in path:gmatch("[^.]+") do
+        object = object:FindFirstChild(part)
+        if not object then break end
+    end
+    if object then
+        object:Destroy()
+        print(path .. " removed successfully!")
+    else
+        print(path .. " not found.")
+    end
+end

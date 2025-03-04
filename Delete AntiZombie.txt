@@ -1,0 +1,12 @@
+local antiZombie = workspace:FindFirstChild("AntiGlitch")
+if antiZombie then
+    local antiZombiePart = antiZombie:FindFirstChild("AntiZombie")
+    if antiZombiePart then
+        antiZombiePart:Destroy()
+        print("AntiZombie removed successfully!")
+    else
+        print("AntiZombie not found.")
+    end
+else
+    print("AntiGlitch not found.")
+end

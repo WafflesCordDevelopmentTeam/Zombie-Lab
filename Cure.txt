@@ -1,0 +1,25 @@
+local player = game.Players.LocalPlayer
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local remotes = replicatedStorage.Remotes
+local giveCureRemote = remotes.GiveCure
+
+-- Function to give the cure
+local function giveCure()
+    -- Fire the remote to give the cure
+    giveCureRemote:FireServer()
+
+    -- Add an item to the player's inventory (example)
+    local inventory = player:FindFirstChild("Backpack") or player:WaitForChild("Backpack")
+    
+    -- Assuming the item is stored in ReplicatedStorage (you can change the path)
+    local cureItem = replicatedStorage:WaitForChild("CureItem") -- Change "CureItem" to your item name
+
+    -- Clone the item and parent it to the player's Backpack
+    if cureItem then
+        local clonedItem = cureItem:Clone()
+        clonedItem.Parent = inventory
+    end
+end
+
+-- Call the function to give the cure
+giveCure()
