@@ -1,4 +1,4 @@
-# NEW DISCORD: nnatsukawa
+# NEW DISCORD: kz_k1
 #
 #
 #
